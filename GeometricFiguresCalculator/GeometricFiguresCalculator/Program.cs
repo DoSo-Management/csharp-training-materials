@@ -33,7 +33,8 @@ namespace GeometricFiguresCalculator
                 {
                     Console.WriteLine();
                     Triangle Triangle = new Triangle(sideA, sideB, sideC);
-                    Triangle.GetPerimeter();
+                    var Zeta = Triangle.GetPerimeter();
+                    Console.WriteLine($"the perimeter is eqaul {Zeta}");
                     Console.ReadLine();
                 }
                 else if (consoleKey.Key == ConsoleKey.D2)
@@ -45,7 +46,6 @@ namespace GeometricFiguresCalculator
                     Triangle.GetArea();
                     Console.ReadLine();
                 }
-
             }else if (consoleKey.Key == ConsoleKey.D2)
             {
                 Console.WriteLine();
@@ -98,13 +98,15 @@ namespace GeometricFiguresCalculator
         }
     }
 
-   public interface GeometricFigures
+
+    public interface IFigure
     {
         double GetArea();
         double GetPerimeter();
     }
 
-    public class Triangle : GeometricFigures
+
+    public class Triangle : IFigure
     {
         double _sideA;
         double _sideB;
@@ -127,22 +129,18 @@ namespace GeometricFiguresCalculator
         }
        public double GetArea()
         {
-            var Area = 1 / 2 * (_height * _sideC);
-            Console.WriteLine($"Triangle Area: {Area}");
-            return Area;
+            var area = 1 / 2 * (_height * _sideC);
+            return area;
         }
 
         public double GetPerimeter()
         {
-            var Perimeter = _sideA + _sideB + _sideC;
-            Console.WriteLine($"Triangle Perimeter: {Perimeter}");
-            return Perimeter;
-
+            var perimeter = _sideA + _sideB + _sideC;
+            return perimeter;
         }
-        
     }
 
-    class Rectangle : GeometricFigures
+    class Rectangle : IFigure
     {
         double _sideA; // Length
         double _sideB; // Width
@@ -151,45 +149,47 @@ namespace GeometricFiguresCalculator
             _sideA = length;
             _sideB = width;
         }
+
         public virtual double GetArea()
         {
-            var Area = _sideA * _sideB; // Length * Width
-            Console.WriteLine($"Rectangle's Area: {Area}");
-            return Area;
+            var area = _sideA * _sideB; // Length * Width
+            return area;
         }
 
         public virtual double GetPerimeter()
         {
-            var Perimeter = (2 * _sideA) + (2 * _sideB); // (2 * Length) + (2 * Width)
-            Console.WriteLine($"Rectangle's Perimeter: {Perimeter}");
-            return Perimeter;
+            var perimeter = (2 * _sideA) + (2 * _sideB); // (2 * Length) + (2 * Width)
+            return perimeter;
         }
     }
 
-    class Paralellogram : Rectangle
+
+    class Paralellogram
     {
         double _height;
         double _length;
         double _width;
 
-        public Paralellogram(double length, double width) : base(length, width)
+        public Paralellogram(double length, double width)
         {
             _length = length;
             _width = width;
         }
-        public Paralellogram(double length, double width,double height) : base (length, width)
+
+        public Paralellogram(double length, double width,double height)
         {
+            _length = length;
+            _width = width;
             _height = height;
         }
 
-        public override double GetArea()
+        public double GetArea()
         {
-            var Area = (_height * base.GetArea());
-            Console.WriteLine($"Parallelogram's Area: {Area}");
-            return Area;
+            var area = (_height * _length);
+            return area;
         }
 
-        public override double GetPerimeter()
+        public double GetPerimeter()
         {
             var Perimeter = 2 * (_length + _width);
             Console.WriteLine($"Parallelogram's Perimeter: {Perimeter}");

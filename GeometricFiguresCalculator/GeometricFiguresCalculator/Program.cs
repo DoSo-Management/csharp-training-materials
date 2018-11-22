@@ -158,7 +158,7 @@ namespace GeometricFiguresCalculator
             return Area;
         }
 
-        public double GetPerimeter()
+        public virtual double GetPerimeter()
         {
             var Perimeter = (2 * _sideA) + (2 * _sideB); // (2 * Length) + (2 * Width)
             Console.WriteLine($"Rectangle's Perimeter: {Perimeter}");
@@ -189,10 +189,35 @@ namespace GeometricFiguresCalculator
             return Area;
         }
 
-        public void GetPerimeter()
+        public override double GetPerimeter()
         {
             var Perimeter = 2 * (_length + _width);
             Console.WriteLine($"Parallelogram's Perimeter: {Perimeter}");
+            return Perimeter;
+        }
+    }
+
+   class Circle 
+    {
+        float _PI = 3.14f;
+        double _Radius;
+
+        public Circle(double Radius)
+        {
+            _Radius = Radius;
+        }
+        public double GetArea()
+        {
+            var Area = _PI * _Radius * _Radius;
+            return Area;
+        }
+    }
+
+    class Sphere : Circle
+    {
+        public Sphere(double Radius) : base(Radius)
+        {
+
         }
     }
 }

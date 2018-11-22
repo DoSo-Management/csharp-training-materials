@@ -100,8 +100,8 @@ namespace GeometricFiguresCalculator
 
    public interface GeometricFigures
     {
-        void GetArea();
-        void GetPerimeter();
+        double GetArea();
+        double GetPerimeter();
     }
 
     public class Triangle : GeometricFigures
@@ -125,16 +125,18 @@ namespace GeometricFiguresCalculator
             _sideC = sideC;
             _height = height;
         }
-       public void GetArea()
+       public double GetArea()
         {
             var Area = 1 / 2 * (_height * _sideC);
             Console.WriteLine($"Triangle Area: {Area}");
+            return Area;
         }
 
-        public void GetPerimeter()
+        public double GetPerimeter()
         {
             var Perimeter = _sideA + _sideB + _sideC;
             Console.WriteLine($"Triangle Perimeter: {Perimeter}");
+            return Perimeter;
 
         }
         
@@ -149,41 +151,42 @@ namespace GeometricFiguresCalculator
             _sideA = length;
             _sideB = width;
         }
-        public void GetArea()
+        public virtual double GetArea()
         {
             var Area = _sideA * _sideB; // Length * Width
             Console.WriteLine($"Rectangle's Area: {Area}");
+            return Area;
         }
 
-        public void GetPerimeter()
+        public double GetPerimeter()
         {
             var Perimeter = (2 * _sideA) + (2 * _sideB); // (2 * Length) + (2 * Width)
             Console.WriteLine($"Rectangle's Perimeter: {Perimeter}");
+            return Perimeter;
         }
     }
 
-    class Paralellogram
+    class Paralellogram : Rectangle
     {
         double _height;
         double _length;
         double _width;
 
-        public Paralellogram(double length, double width)
+        public Paralellogram(double length, double width) : base(length, width)
         {
             _length = length;
             _width = width;
         }
-        public Paralellogram(double length, double width,double height)
+        public Paralellogram(double length, double width,double height) : base (length, width)
         {
-            _length = length;
-            _width = width;
             _height = height;
         }
 
-        public void GetArea()
+        public override double GetArea()
         {
-            var Area = (_height * _length);
+            var Area = (_height * base.GetArea());
             Console.WriteLine($"Parallelogram's Area: {Area}");
+            return Area;
         }
 
         public void GetPerimeter()

@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace GeometricFiguresCalculator {
     public interface IFigure {
-        double GetArea();
         double GetPerimeter();
     }
 }

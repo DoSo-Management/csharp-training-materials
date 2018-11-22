@@ -5,6 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GeometricFiguresCalculator {
-    class Class1 {
+    class Dialog {
     }
 }

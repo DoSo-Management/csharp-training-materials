@@ -13,11 +13,6 @@ namespace GeometricFiguresCalculator {
             _sideB = width;
         }
 
-        public virtual double GetArea() {
-            var area = _sideA * _sideB; // Length * Width
-            return area;
-        }
-
         public virtual double GetPerimeter() {
             var perimeter = (2 * _sideA) + (2 * _sideB); // (2 * Length) + (2 * Width)
             return perimeter;

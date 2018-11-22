@@ -21,11 +21,6 @@ namespace GeometricFiguresCalculator {
             _height = height;
         }
 
-        public double GetArea() {
-            var area = (_height * _length);
-            return area;
-        }
-
         public double GetPerimeter() {
             var Perimeter = 2 * (_length + _width);
             Console.WriteLine($"Parallelogram's Perimeter: {Perimeter}");

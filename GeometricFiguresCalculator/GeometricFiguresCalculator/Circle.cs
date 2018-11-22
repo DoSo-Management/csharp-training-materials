@@ -12,9 +12,5 @@ namespace GeometricFiguresCalculator {
         public Circle(double Radius) {
             _Radius = Radius;
         }
-        public double GetArea() {
-            var Area = _PI * _Radius * _Radius;
-            return Area;
-        }
     }
 }

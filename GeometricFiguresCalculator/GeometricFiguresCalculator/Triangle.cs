@@ -24,11 +24,6 @@ namespace GeometricFiguresCalculator {
             _height = height;
         }
 
-        public double GetArea() {
-            var area = 1 / 2 * (_height * _sideC);
-            return area;
-        }
-
         public double GetPerimeter() {
             var perimeter = _sideA + _sideB + _sideC;
             return perimeter;

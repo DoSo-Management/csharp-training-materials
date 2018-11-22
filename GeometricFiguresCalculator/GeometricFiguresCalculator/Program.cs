@@ -120,6 +120,17 @@ namespace GeometricFiguresCalculator
             _sideC = sideC;
         }
 
+
+
+
+
+
+
+
+
+
+
+
         public Triangle(double sideA, double sideB, double sideC, double height)
         {
             _sideA = sideA;
@@ -139,6 +150,25 @@ namespace GeometricFiguresCalculator
             return perimeter;
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     class Rectangle : IFigure
     {
@@ -164,6 +194,23 @@ namespace GeometricFiguresCalculator
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     class Paralellogram
     {
         double _height;
@@ -175,6 +222,23 @@ namespace GeometricFiguresCalculator
             _length = length;
             _width = width;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         public Paralellogram(double length, double width,double height)
         {

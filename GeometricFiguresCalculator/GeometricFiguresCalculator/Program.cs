@@ -46,7 +46,7 @@ namespace GeometricFiguresCalculator
                     Triangle.GetArea();
                     Console.ReadLine();
                 }
-            }else if (consoleKey.Key == ConsoleKey.D2)
+            } else if (consoleKey.Key == ConsoleKey.D2)
             {
                 Console.WriteLine();
                 Console.Write("Enter Length: ");
@@ -68,7 +68,7 @@ namespace GeometricFiguresCalculator
                     Console.WriteLine();
                     Rectangle.GetArea();  
                 }
-            }else if (consoleKey.Key == ConsoleKey.D3)
+            } else if (consoleKey.Key == ConsoleKey.D3)
             {
                 Console.WriteLine();
                 Console.Write("Enter Length: ");
@@ -85,7 +85,7 @@ namespace GeometricFiguresCalculator
                     Paralellogram Paralellogram = new Paralellogram(length, width);
                     Paralellogram.GetPerimeter();
                     Console.ReadLine();
-                } else if (consoleKey.Key == ConsoleKey.D2)
+                } else if (consoleKey.Key == ConsoleKey.D2) 
                 {
                     Console.WriteLine();
                     Console.Write("Enter Paralellogram's Height: ");
@@ -95,129 +95,6 @@ namespace GeometricFiguresCalculator
                     Console.ReadLine();
                 }
             } 
-        }
-    }
-
-
-    public interface IFigure
-    {
-        double GetArea();
-        double GetPerimeter();
-    }
-
-
-    public class Triangle : IFigure
-    {
-        double _sideA;
-        double _sideB;
-        double _sideC;
-        double _height;
-
-        public Triangle(double sideA, double sideB, double sideC)
-        {
-            _sideA = sideA;
-            _sideB = sideB;
-            _sideC = sideC;
-        }
-
-        public Triangle(double sideA, double sideB, double sideC, double height)
-        {
-            _sideA = sideA;
-            _sideB = sideB;
-            _sideC = sideC;
-            _height = height;
-        }
-       public double GetArea()
-        {
-            var area = 1 / 2 * (_height * _sideC);
-            return area;
-        }
-
-        public double GetPerimeter()
-        {
-            var perimeter = _sideA + _sideB + _sideC;
-            return perimeter;
-        }
-    }
-
-    class Rectangle : IFigure
-    {
-        double _sideA; // Length
-        double _sideB; // Width
-        public Rectangle(double length, double width) 
-        {
-            _sideA = length;
-            _sideB = width;
-        }
-
-        public virtual double GetArea()
-        {
-            var area = _sideA * _sideB; // Length * Width
-            return area;
-        }
-
-        public virtual double GetPerimeter()
-        {
-            var perimeter = (2 * _sideA) + (2 * _sideB); // (2 * Length) + (2 * Width)
-            return perimeter;
-        }
-    }
-
-
-    class Paralellogram
-    {
-        double _height;
-        double _length;
-        double _width;
-
-        public Paralellogram(double length, double width)
-        {
-            _length = length;
-            _width = width;
-        }
-
-        public Paralellogram(double length, double width,double height)
-        {
-            _length = length;
-            _width = width;
-            _height = height;
-        }
-
-        public double GetArea()
-        {
-            var area = (_height * _length);
-            return area;
-        }
-
-        public double GetPerimeter()
-        {
-            var Perimeter = 2 * (_length + _width);
-            Console.WriteLine($"Parallelogram's Perimeter: {Perimeter}");
-            return Perimeter;
-        }
-    }
-
-   class Circle 
-    {
-        float _PI = 3.14f;
-        double _Radius;
-
-        public Circle(double Radius)
-        {
-            _Radius = Radius;
-        }
-        public double GetArea()
-        {
-            var Area = _PI * _Radius * _Radius;
-            return Area;
-        }
-    }
-
-    class Sphere : Circle
-    {
-        public Sphere(double Radius) : base(Radius)
-        {
-
         }
     }
 }

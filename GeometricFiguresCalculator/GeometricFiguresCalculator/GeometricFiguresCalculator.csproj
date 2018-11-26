@@ -44,9 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Circle.cs" />
+    <Compile Include="ConsoleLogger.cs" />
+    <Compile Include="Dialog.cs" />
+    <Compile Include="FileLogger.cs" />
     <Compile Include="IFigure.cs" />
-    <Compile Include="Sphere.cs" />
-    <Compile Include="Paralellogram.cs" />
+    <Compile Include="ILogger.cs" />
+    <Compile Include="Parallelogram.cs" />
     <Compile Include="Rectangle.cs" />
     <Compile Include="Triangle.cs" />
     <Compile Include="Program.cs" />
@@ -54,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

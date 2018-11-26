@@ -5,17 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GeometricFiguresCalculator {
-    class Paralellogram {
+    class Parallelogram {
         double _height;
         double _length;
         double _width;
 
-        public Paralellogram(double length, double width) {
+        public Parallelogram(double length, double width) {
             _length = length;
             _width = width;
         }
 
-        public Paralellogram(double length, double width, double height) {
+        public Parallelogram(double length, double width, double height) {
             _length = length;
             _width = width;
             _height = height;

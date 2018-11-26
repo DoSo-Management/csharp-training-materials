@@ -5,9 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GeometricFiguresCalculator {
-    class Sphere : Circle {
-        public Sphere(double Radius) : base(Radius) {
-
-        }
+    interface ILogger {
+        void Log(string text);
     }
 }
